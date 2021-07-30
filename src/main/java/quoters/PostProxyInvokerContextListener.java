@@ -6,6 +6,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import quoters.annotations.PostProxy;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
