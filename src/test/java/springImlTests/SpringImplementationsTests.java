@@ -50,4 +50,11 @@ public class SpringImplementationsTests extends BaseTest {
             Thread.sleep(500L);
         }
     }
+
+    @Test
+    public void contextWithDeprecatedTest() {
+        app.getXmlContext("simpleContextWithDeprecated.xml")
+                .getBean(Quoter.class)
+                .sayQuote();
+    }
 }
