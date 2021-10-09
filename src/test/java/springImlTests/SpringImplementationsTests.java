@@ -34,17 +34,12 @@ public class SpringImplementationsTests extends BaseTest {
 
     @Test
     public void fullContextWithPostProxyTest() {
-        app.getXmlContext("fullContextWithPostProxyInvokerListener.xml")
-                .getBean(Quoter.class);
+        app.getXmlContext("fullContextWithPostProxyInvokerListener.xml").getBean(Quoter.class);
     }
 
     @Test
     public void fullContextWithPostProfilingTest() throws InterruptedException {
-        //public static void main(String[] args) throws InterruptedException {
-        Quoter quoter = app.getXmlContext("fullContextWithProfiling.xml")
-                //new ClassPathXmlApplicationContext("fullContextWithProfiling.xml")
-                .getBean(Quoter.class);
-
+        Quoter quoter = app.getXmlContext("fullContextWithProfiling.xml").getBean(Quoter.class);
         while (true) {
             quoter.sayQuote();
             Thread.sleep(500L);
