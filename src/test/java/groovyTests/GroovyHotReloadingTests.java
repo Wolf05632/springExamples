@@ -5,10 +5,10 @@ import groovyHotReloading.Calc;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class GroovyHotReloadingTests extends BaseTest {
+class GroovyHotReloadingTests extends BaseTest {
 
     @Test
-    public void groovyHotReloadingTest() throws InterruptedException {
+    void groovyHotReloadingTest() throws InterruptedException {
         Calc calc = (Calc) new ClassPathXmlApplicationContext("groovyBeanHotReloading.xml").getBean("calc");
         int result;
         do {
