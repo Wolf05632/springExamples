@@ -40,7 +40,7 @@ class SpringImplementationsTests extends BaseTest {
     @Test
     void fullContextWithPostProfilingTest() throws InterruptedException {
         Quoter quoter = app.getXmlContext("fullContextWithProfiling.xml").getBean(Quoter.class);
-        while (true) {
+        while (Thread.currentThread().isAlive()) {
             quoter.sayQuote();
             Thread.sleep(500L);
         }

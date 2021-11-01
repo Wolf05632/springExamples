@@ -25,11 +25,11 @@ public class PostProxyInvokerContextListener implements ApplicationListener<Cont
             try {
                 Class<?> originalClass = Class.forName(originalClassName);
                 Method[] methods = originalClass.getMethods();
-                for (Method method : methods){
-                    if(method.isAnnotationPresent(PostProxy.class)) {
+                for (Method method : methods) {
+                    if (method.isAnnotationPresent(PostProxy.class)) {
                         Object bean = context.getBean(name);
                         Method currentMethod = bean.getClass().getMethod(method.getName(), method.getParameterTypes());
-                        currentMethod.invoke(bean);
+                        currentMethod.invoke(bean, new Object());
                     }
                 }
             } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
